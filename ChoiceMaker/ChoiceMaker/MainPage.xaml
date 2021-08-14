@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:food="clr-namespace:ChoiceMaker"
+             x:Class="ChoiceMaker.MainPage">
+
+    <StackLayout >
+
+        
+        <Label Text="                   ">
+
+        </Label>
+
+        <Picker x:Name="typePicker"
+                Title="Food type"
+                HorizontalOptions="CenterAndExpand"
+                SelectedIndexChanged="typePicker_SelectedIndexChanged">
+
+            <Picker.ItemsSource>
+
+                <x:Array Type="{x:Type food:FoodType}">
+
+                    <x:Static Member="food:FoodType.Healthy"/>
+                    <x:Static Member="food:FoodType.Burger"/>
+                    <x:Static Member="food:FoodType.Chinese"/>
+                    <x:Static Member="food:FoodType.Chicken"/>
+                    <x:Static Member="food:FoodType.Sushi"/>
+                    <x:Static Member="food:FoodType.Sandwich"/>
+                    <x:Static Member="food:FoodType.Pizza"/>
+                    <x:Static Member="food:FoodType.Breakfast"/>
+                    <x:Static Member="food:FoodType.Steak"/>
+
+                </x:Array>
+
+            </Picker.ItemsSource>
+        </Picker>
+
+
+
+        <Picker x:Name="readyTimePicker"
+                Title="Ready Time"
+                HorizontalOptions="CenterAndExpand"
+                SelectedIndexChanged="readyTimePicker_SelectedIndexChanged">
+
+            <Picker.ItemsSource>
+
+                <x:Array Type="{x:Type food:ReadyTime}">
+
+                    <x:Static Member="food:ReadyTime.FastFood"/>
+                    <x:Static Member="food:ReadyTime.SitIn"/>
+
+                </x:Array>
+
+            </Picker.ItemsSource>
+
+        </Picker>
+
+
+
+
+        <Label x:Name="restName"
+               HorizontalOptions="Center">
+        </Label>
+
+
+
+        <Button x:Name="findRest"
+                Text="Find Restaurant"
+                Clicked="findRest_Clicked">
+        </Button>
+
+
+        <Editor x:Name="result"
+                Text="">
+
+        </Editor>
+
+
+    </StackLayout>
+
+
+    
+
+</ContentPage>
